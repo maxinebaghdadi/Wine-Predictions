@@ -19,6 +19,9 @@ This data was scraped from WineEnthusiast in 2017 and it contains the following 
 | region_1      | Specified growing area within province  |
 | region_2      | Additional growing areas  |
 | taster_name   | Rater of the wine  |
+| title         | Name of wine with vintage  |
+| variety       | Type of grapes used to make wine | 
+| winery        | Winery of specificied wine | 
 
 
 ### BERT Model 
@@ -32,6 +35,12 @@ BERT uses two training strategies:
  We use BERT to extract descriptive terms from the Wine Reviews dataset to product prediction modelling. 
 
 # Procedure  
+
+1. **Reading and Cleaning the Data:** We focused in on country, description, price, province, title, variety 
+
+
+
+
 
 ```markdown
 Syntax highlighted code block
