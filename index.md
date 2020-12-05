@@ -15,8 +15,10 @@ The BERT Model is a state-of-the-art natural language processor recently develop
 BERT uses two training strategies: 
   1. Masked LM: 15% of the words in a sequence fed into BERT are replaced with a Mask token. The model predicts the original value of the masked words based on the context of the non-masked. Its loss function only considers the prediction of the masked values. 
   2. Next Sentence Prediction: 50% of inputs are a pair in which the second sentence is a subsequent sentence in the original and the other 50% is where random sentences from the text are chosen as the second sentence. This trains the model to disconnect the random sentence from the first.  
+  
+ We use BERT to extract descriptive terms from the Wine Reviews dataset to product prediction modelling. 
 
-
+# Process 
 
 ```markdown
 Syntax highlighted code block
