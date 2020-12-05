@@ -44,7 +44,7 @@ df.head()
 ```
 | country       | description   | price         | province      | title         | variety       |    
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | 
-| 0       | Country that the wine is from  |
+| Portugal       | This is ripe and fruity, a wine that is smooth...  | 15.0 | Douro | Quinta dos Avidagos 2011 Avidagos Red (Douro) | Portuguese Red
 | 1       | Country that the wine is from  |
 | 2   | Distinctive elements of the taste of the wine  |
 | 3   | Vineyard within winery where the graphes that made the wine are from  |
