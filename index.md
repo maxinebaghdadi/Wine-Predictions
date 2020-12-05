@@ -35,7 +35,9 @@ BERT uses two training strategies:
  We use BERT to extract descriptive terms from the Wine Reviews dataset to product prediction modelling. 
 
 # Methodology  
-#### Reading and Cleaning the Data:** Filtered for country, description, price, province, title, variety and dropped rows without the price and NaN entries. 
+#### Reading and Cleaning the Data: 
+
+Filtered for country, description, price, province, title, variety and dropped rows without the price and NaN entries. 
 
 ```markdown
 df = df[['country','description','price','province','title','variety']]
@@ -45,18 +47,11 @@ df.head()
 | country       | description   | price         | province      | title         | variety       |    
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | 
 | Portugal       | This is ripe and fruity, a wine that is smooth...  | 15.0 | Douro | Quinta dos Avidagos 2011 Avidagos Red (Douro) | Portuguese Red
-| 1       | Country that the wine is from  |
-| 2   | Distinctive elements of the taste of the wine  |
-| 3   | Vineyard within winery where the graphes that made the wine are from  |
-| 4        | Rating on a scale from 1-100   |
-| 5         | Cost per bottle of wine  |
-| province      | Province or state wine is from  |
-| region_1      | Specified growing area within province  |
-| region_2      | Additional growing areas  |
-| taster_name   | Rater of the wine  |
-| title         | Name of wine with vintage  |
-| variety       | Type of grapes used to make wine | 
-| winery        | Winery of specificied wine | 
+| US       | Tart and snappy, the flavors of lime flesh and... | 14.0 | Oregon | Rainstorm 2013 Pinot Gris (Willamette Valley)	| Pinot Gris
+| US   | Pineapple rind, lemon pith and orange blossom ... | 13.0 | Michigan | St. Julian 2013 Reserve Late Harvest Riesling ...	| Riesling 
+| US  | Much like the regular bottling from 2012, this...	  | 65.0 | Oregon | Sweet Cheeks 2012 Vintner's Reserve Wild Child | Pinot Noir 
+| Spain        | Blackberry and raspberry aromas show a typical...	   | 15.0 | Northern Spain | Tandem 2011 Ars In Vitro Tempranillo-Merlot | Tempranillo-Merlot
+
 
 2. **Exploratory Data Analysis:** Conducted some basic EDA which we have attached below 
 3. **Text Preprocessing:** Standardized description variable through stemming, lemmatization, stopword removal, noise removal and lowercasing 
