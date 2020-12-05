@@ -37,11 +37,12 @@ BERT uses two training strategies:
 # Methodology  
 #### Reading and Cleaning the Data: 
 
-Filtered for country, description, price, province, title, variety and dropped rows without the price and NaN entries. 
+Filtered for country, description, price, province, title, variety; dropped rows without the price and NaN entries; removed datapoints with same title and description
 
 ```markdown
 df = df[['country','description','price','province','title','variety']]
 df = df.dropna()
+df = df.drop_duplicates(['description, 'title']) 
 df.head()
 ```
 | country       | description   | price         | province      | title         | variety       |    
@@ -53,8 +54,21 @@ df.head()
 | Spain        | Blackberry and raspberry aromas show a typical...	   | 15.0 | Northern Spain | Tandem 2011 Ars In Vitro Tempranillo-Merlot | Tempranillo-Merlot
 
 
-2. **Exploratory Data Analysis:** Conducted some basic EDA which we have attached below 
-3. **Text Preprocessing:** Standardized description variable through stemming, lemmatization, stopword removal, noise removal and lowercasing 
+
+### Exploratory Data Analysis: 
+Analyzed X, Y, Z * insert graphs here 
+
+### Text Preprocessing: 
+Standardized description variable through stemming, lemmatization, stopword removal, noise removal and lowercasing 
+
+```markdown
+df = df[['country','description','price','province','title','variety']]
+df = df.dropna()
+df = df.drop_duplicates(['description, 'title']) 
+df.head()
+```
+
+
 4. **Implementing "Bag of Words" Model:** Tokenized sentences to lists of words and created a vocabulary list of those words 
 5. **Splitting Data into Testing/Training Set (80/20 Split): 
 
