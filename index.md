@@ -59,18 +59,13 @@ df.head()
 
 To get familiar with the data, we conducted some basic EDA. 
 
-***What are the 5 most popular varieties?***
-```markdown
-df_variety = df.variety.value_counts()
-df_variety.head()
-```
-| Variety                  | Count         | 
-| ------------------------ | ------------- | 
-| Pinot Noir               | 12785 |
-| Chardonnay               | 11077 |
-| Cabernet Sauvignon       | 9384  |
-| Red Blend                | 8466|
-| Bordeaux-style Red Blend | 5340|
+***What is the country wise average wine price?***
+
+<img src="countryprice.png" alt="hi" class="inline"/>
+
+***What scores did the frequent varieties receive? 
+
+
 
 
 
@@ -141,4 +136,3 @@ We use GridSearchCV to find the optimal hyperparameters of this model to increas
 This project would not have been possible without the support from [Professor Mike Izbicki](https://izbicki.me/). 
 
 
-<img src="countryprice.png" alt="hi" class="inline"/>
