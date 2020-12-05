@@ -10,10 +10,11 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 
 ### BERT Model 
 
-The BERT Model is a state-of-the-art natural language processor recently developed by researchers at [Google AI Language](https://arxiv.org/pdf/1810.04805.pdf). In contrast to past models that looked at a text sequence from left to right or combined left-to-right and right-to-left training, BERT implements bidirectional training of a Transformer and thus has a deeper flow and language context than single-direction models. Fundamentally this transformer includes two mechanisms: an encoder that reads the text input and a decoder that produces a prediction for task. 
+The BERT Model is a state-of-the-art natural language processor recently developed by researchers at [Google AI Language](https://arxiv.org/pdf/1810.04805.pdf). Past models looked at a text sequence from left to right or combined left-to-right and right-to-left training, BERT, on the other hand, implements bidirectional training of a Transformer and thus has a deeper flow and language context than single-direction models. Fundamentally this transformer includes two mechanisms: an encoder that reads the text input and a decoder that produces a prediction for task. 
 
 BERT uses two training strategies: 
-  1. Masked LM: 15% of the words in a sequence fed into BERT are replaced with a Mask token. The model 
+  1. Masked LM: 15% of the words in a sequence fed into BERT are replaced with a Mask token. The model predicts the original value of the masked words based on the context of the non-masked. Its loss function only considers the prediction of the masked values. 
+  2. Next Sentence Prediction: 
 
 
 
