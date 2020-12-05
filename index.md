@@ -10,15 +10,15 @@ This data was scraped from WineEnthusiast in 2017 and it contains the following 
 
 | Variable      | Description   | 
 | ------------- | ------------- | 
-| country       | Content Cell  |
+| country       | Country that the wine is from  |
 | description   | Content Cell  |
-| designation   | Content Cell  |
-| points        | Content Cell  |
-| price         | Content Cell  |
-| province      | Content Cell  |
-| region_1      | Content Cell  |
-| region_2      | Content Cell  |
-| taster_name   | Content Cell  |
+| designation   | Vineyard within winery where the graphes that made the wine are from  |
+| points        | Rating on a scale from 1-100   |
+| price         | Cost per bottle of wine  |
+| province      | Province or state wine is from  |
+| region_1      | Specified growing area within province  |
+| region_2      | Additional growing areas  |
+| taster_name   | Rater of the wine  |
 
 
 ### BERT Model 
