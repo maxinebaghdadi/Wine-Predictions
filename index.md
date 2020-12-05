@@ -35,9 +35,28 @@ BERT uses two training strategies:
  We use BERT to extract descriptive terms from the Wine Reviews dataset to product prediction modelling. 
 
 # Methodology  
-**Reading and Cleaning the Data:** Filtered for country, description, price, province, title, variety and dropped rows without the price and NaN entries. 
+#### Reading and Cleaning the Data:** Filtered for country, description, price, province, title, variety and dropped rows without the price and NaN entries. 
 
-
+```markdown
+df = df[['country','description','price','province','title','variety']]
+df = df.dropna()
+df.head()
+```
+| country               | description   | price   | province   | title   | variety   |    
+| ------------- | ------------- | 
+| 0       | Country that the wine is from  |
+| 1       | Country that the wine is from  |
+| 2   | Distinctive elements of the taste of the wine  |
+| 3   | Vineyard within winery where the graphes that made the wine are from  |
+| 4        | Rating on a scale from 1-100   |
+| 5         | Cost per bottle of wine  |
+| province      | Province or state wine is from  |
+| region_1      | Specified growing area within province  |
+| region_2      | Additional growing areas  |
+| taster_name   | Rater of the wine  |
+| title         | Name of wine with vintage  |
+| variety       | Type of grapes used to make wine | 
+| winery        | Winery of specificied wine | 
 
 2. **Exploratory Data Analysis:** Conducted some basic EDA which we have attached below 
 3. **Text Preprocessing:** Standardized description variable through stemming, lemmatization, stopword removal, noise removal and lowercasing 
@@ -48,24 +67,7 @@ BERT uses two training strategies:
 
 
 
-```markdown
-df = df.dropna()
-df
-```
-| Variable      | Description   | 
-| ------------- | ------------- | 
-| country       | Country that the wine is from  |
-| description   | Distinctive elements of the taste of the wine  |
-| designation   | Vineyard within winery where the graphes that made the wine are from  |
-| points        | Rating on a scale from 1-100   |
-| price         | Cost per bottle of wine  |
-| province      | Province or state wine is from  |
-| region_1      | Specified growing area within province  |
-| region_2      | Additional growing areas  |
-| taster_name   | Rater of the wine  |
-| title         | Name of wine with vintage  |
-| variety       | Type of grapes used to make wine | 
-| winery        | Winery of specificied wine | 
+
 
 
 
