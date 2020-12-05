@@ -5,13 +5,20 @@ This project implements the Bidirectional Encoder Representations from Transform
 
 ### Wine Reviews Data Set 
 
-This data was scraped from WineEnthusiast in 2017. 
+This data was scraped from WineEnthusiast in 2017 and it contains the following variables: 
 
 
-| Variable      | Data Type     | Sample       |
-| ------------- | ------------- | -------------
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Variable      | Description   | 
+| ------------- | ------------- | 
+| country       | Content Cell  |
+| description   | Content Cell  |
+| designation   | Content Cell  |
+| points        | Content Cell  |
+| price         | Content Cell  |
+| province      | Content Cell  |
+| region_1      | Content Cell  |
+| region_2      | Content Cell  |
+| taster_name   | Content Cell  |
 
 
 ### BERT Model 
