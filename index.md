@@ -34,16 +34,38 @@ BERT uses two training strategies:
   
  We use BERT to extract descriptive terms from the Wine Reviews dataset to product prediction modelling. 
 
-# Procedure  
+# Methodology  
+**Reading and Cleaning the Data:** Filtered for country, description, price, province, title, variety and dropped rows without the price and NaN entries. 
 
-1. **Reading and Cleaning the Data:** We focused in on country, description, price, province, title, variety. We dropped rows without the price and NaN entries. 
-2. **
+
+
+2. **Exploratory Data Analysis:** Conducted some basic EDA which we have attached below 
+3. **Text Preprocessing:** Standardized description variable through stemming, lemmatization, stopword removal, noise removal and lowercasing 
+4. **Implementing "Bag of Words" Model:** Tokenized sentences to lists of words and created a vocabulary list of those words 
+5. **Splitting Data into Testing/Training Set (80/20 Split): 
 
 
 
 
 
 ```markdown
+| Variable      | Description   | 
+| ------------- | ------------- | 
+| country       | Country that the wine is from  |
+| description   | Distinctive elements of the taste of the wine  |
+| designation   | Vineyard within winery where the graphes that made the wine are from  |
+| points        | Rating on a scale from 1-100   |
+| price         | Cost per bottle of wine  |
+| province      | Province or state wine is from  |
+| region_1      | Specified growing area within province  |
+| region_2      | Additional growing areas  |
+| taster_name   | Rater of the wine  |
+| title         | Name of wine with vintage  |
+| variety       | Type of grapes used to make wine | 
+| winery        | Winery of specificied wine | 
+
+
+
 Syntax highlighted code block
 
 # Header 1
