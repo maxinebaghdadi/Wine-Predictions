@@ -76,6 +76,20 @@ df['description'].head()
 
 
 4. **Implementing "Bag of Words" Model:** Tokenized sentences to lists of words and created a vocabulary list of those words 
+
+```markdown
+tokenizer = RegexpTokenizer(r'\w+')
+words_descriptions = df['description'].apply(tokenizer.tokenize)
+words_descriptions.head()
+```
+| Variable      | Description   | 
+| ------------- | ------------- | 
+| 0       | [this, is, ripe, and, fruity, a, wine, that, i... |
+| 1   |[tart, and, snappy, the, flavors, of, lime, fl...  |
+| 2   |[pineapple, rind, lemon, pith, and, orange, bl...  |
+| 3        |  [much, like, the, regular, bottling, from, thi...  |
+| 4         | [blackberry, and, raspberry, aromas, show, a, ...  |
+
 5. **Splitting Data into Testing/Training Set (80/20 Split): 
 
 
