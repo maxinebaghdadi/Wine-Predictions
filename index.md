@@ -117,7 +117,6 @@ Our final goal is to output variety and country. However, those 2 outputs are in
 
 We use GridSearchCV to find the optimal hyperparameters of this model to increase its accuracy. 
 
-
 # Results 
 
 # Conclusion
