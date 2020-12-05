@@ -35,7 +35,7 @@ BERT uses two training strategies:
  We use BERT to extract descriptive terms from the Wine Reviews dataset to product prediction modelling. 
 
 # Methodology  
-#### Reading and Cleaning the Data: 
+### Reading and Cleaning the Data: 
 
 Filtered for country, description, price, province, title, variety; dropped rows without the price and NaN entries; removed datapoints with same title and description
 
@@ -45,13 +45,13 @@ df = df.dropna()
 df = df.drop_duplicates(['description, 'title']) 
 df.head()
 ```
-| country       | description   | price         | province      | title         | variety       |    
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | 
-| Portugal       | This is ripe and fruity, a wine that is smooth...  | 15.0 | Douro | Quinta dos Avidagos 2011 Avidagos Red (Douro) | Portuguese Red
-| US       | Tart and snappy, the flavors of lime flesh and... | 14.0 | Oregon | Rainstorm 2013 Pinot Gris (Willamette Valley)	| Pinot Gris
-| US   | Pineapple rind, lemon pith and orange blossom ... | 13.0 | Michigan | St. Julian 2013 Reserve Late Harvest Riesling ...	| Riesling 
-| US  | Much like the regular bottling from 2012, this...	  | 65.0 | Oregon | Sweet Cheeks 2012 Vintner's Reserve Wild Child | Pinot Noir 
-| Spain        | Blackberry and raspberry aromas show a typical...	   | 15.0 | Northern Spain | Tandem 2011 Ars In Vitro Tempranillo-Merlot | Tempranillo-Merlot
+| country       | description                                        | price  | province      | title                                         | variety       |    
+| ------------- | -------------------------------------------------  | ------ | ------------- | -------------                                 |------------- | 
+| Portugal      | This is ripe and fruity, a wine that is smooth...  | 15.0   | Douro         | Quinta dos Avidagos 2011 Avidagos Red (Douro) | Portuguese Red
+| US            | Tart and snappy, the flavors of lime flesh and...  | 14.0   | Oregon        | Rainstorm 2013 Pinot Gris (Willamette Valley)	| Pinot Gris
+| US            | Pineapple rind, lemon pith and orange blossom ...  | 13.0   | Michigan      | St. Julian 2013 Reserve Late Harvest Riesling | Riesling 
+| US            | Much like the regular bottling from 2012, this...	 | 65.0   | Oregon        | Sweet Cheeks 2012 Vintner's Reserve Wild Child| Pinot Noir 
+| Spain         | Blackberry and raspberry aromas show a typical...	 | 15.0   | Northern Spain| Tandem 2011 Ars In Vitro Tempranillo-Merlot   | Tempranillo-Merlot
 
 
 
@@ -68,11 +68,11 @@ df['description'].head()
 ```
 | Variable      | Description   | 
 | ------------- | ------------- | 
-| 0       | this is ripe and fruity  a wine that is smooth...  |
-| 1   | tart and snappy  the flavors of lime flesh and...  |
-| 2   | pineapple rind  lemon pith and orange blossom ...  |
-| 3        | much like the regular bottling from       this...   |
-| 4         | blackberry and raspberry aromas show a typical...  |
+| 0             | this is ripe and fruity  a wine that is smooth...  |
+| 1             | tart and snappy  the flavors of lime flesh and...  |
+| 2             | pineapple rind  lemon pith and orange blossom ...  |
+| 3             | much like the regular bottling from       this...   |
+| 4             | blackberry and raspberry aromas show a typical...  |
 
 ```markdown
 stopword_list = stopwords.words('english')
@@ -95,11 +95,11 @@ words_descriptions.head()
 ```
 | Variable      | Description   |
 | ------------- | ------------- | 
-| 0       | [this, is, ripe, and, fruity, a, wine, that, i... |
-| 1   |[tart, and, snappy, the, flavors, of, lime, fl...  |
-| 2   |[pineapple, rind, lemon, pith, and, orange, bl...  |
-| 3        |  [much, like, the, regular, bottling, from, thi...  |
-| 4         | [blackberry, and, raspberry, aromas, show, a, ...  |
+| 0             | [this, is, ripe, and, fruity, a, wine, that, i... |
+| 1             |[tart, and, snappy, the, flavors, of, lime, fl...  |
+| 2             |[pineapple, rind, lemon, pith, and, orange, bl...  |
+| 3             |  [much, like, the, regular, bottling, from, thi...  |
+| 4             | [blackberry, and, raspberry, aromas, show, a, ...  |
 
 ```markdown
 all_words = [word for tokens in words_descriptions for word in tokens]
@@ -110,36 +110,17 @@ print("%s words total, with a vocabulary size of %s" % (len(all_words), len(VOCA
 
 ### Splitting Data into Testing/Training Set (80/20 Split): 
 
-We are running 2 regressions: one that relates the description to variety and the other that relates variety and price to country. 
+Our final goal is to output variety and country. However, those 2 outputs are in 2 different columns in the dataframe. Therefore we are running to regressions:
+
+1. Logistic Regression (Processed Description --> Variety) 
+2. Multinomial Logistic Regression (Variety, Price --> Country)
+
+We use GridSearchCV to find the optimal hyperparameters of this model to increase its accuracy. 
 
 
+# Results 
 
+# Conclusion
 
-
-
-
-
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/maxinebaghdadi/winepredictions/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+# Acknowledgements & References 
+This project would not have been possible without the support from [Professor Mike Izbicki](https://izbicki.me/). 
