@@ -62,11 +62,17 @@ Analyzed X, Y, Z * insert graphs here
 Standardized description variable through stemming, lemmatization, stopword removal, noise removal and lowercasing 
 
 ```markdown
-*#LowerCasing* 
 df['description']= df['description'].str.lower()
 df['description']= df['description'].apply(lambda elem: re.sub('[^a-zA-Z]',' ', elem))  
-df['description']
+df['description'].head()
 ```
+| Variable      | Description   | 
+| ------------- | ------------- | 
+| 0       | this is ripe and fruity  a wine that is smooth...  |
+| 1   | tart and snappy  the flavors of lime flesh and...  |
+| 2   | pineapple rind  lemon pith and orange blossom ...  |
+| 3        | much like the regular bottling from       this...   |
+| 4         | blackberry and raspberry aromas show a typical...  |
 
 
 4. **Implementing "Bag of Words" Model:** Tokenized sentences to lists of words and created a vocabulary list of those words 
