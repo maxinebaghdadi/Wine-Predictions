@@ -56,7 +56,23 @@ df.head()
 
 
 ### Exploratory Data Analysis: 
-Analyzed X, Y, Z * insert graphs here 
+
+To get familiar with the data, we conducted some basic EDA. 
+
+***What are the 5 most popular varieties?***
+```markdown
+df_variety = df.variety.value_counts()
+df_variety.head()
+```
+| Variety                  | Count         | 
+| ------------------------ | ------------- | 
+| Pinot Noir               | 12785 |
+| Chardonnay               | 11077 |
+| Cabernet Sauvignon       | 9384  |
+| Red Blend                | 8466|
+| Bordeaux-style Red Blend | 5340|
+
+
 
 ### Text Preprocessing: 
 Standardized description variable through stemming, lemmatization, stopword removal, noise removal and lowercasing 
