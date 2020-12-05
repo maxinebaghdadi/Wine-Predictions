@@ -85,14 +85,15 @@ all_words = [word for tokens in words_descriptions for word in tokens]
 VOCAB = sorted(list(set(all_words)))
 ```
 
-4. **Implementing "Bag of Words" Model:** Tokenized sentences to lists of words and created a vocabulary list of those words 
+### Implementing "Bag of Words" Model:
+Tokenized sentences to lists of words and created a vocabulary list of those words 
 
 ```markdown
 tokenizer = RegexpTokenizer(r'\w+')
 words_descriptions = df['description'].apply(tokenizer.tokenize)
 words_descriptions.head()
 ```
-
+| Variable      | Description   |
 | ------------- | ------------- | 
 | 0       | [this, is, ripe, and, fruity, a, wine, that, i... |
 | 1   |[tart, and, snappy, the, flavors, of, lime, fl...  |
@@ -107,11 +108,9 @@ VOCAB = sorted(list(set(all_words)))
 print("%s words total, with a vocabulary size of %s" % (len(all_words), len(VOCAB)))
 ```
 
+### Splitting Data into Testing/Training Set (80/20 Split): 
 
-
-
-5. **Splitting Data into Testing/Training Set (80/20 Split): 
-
+We are running 2 regressions: one that relates the description to variety and the other that relates variety and price to country. 
 
 
 
