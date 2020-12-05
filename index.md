@@ -74,6 +74,16 @@ df['description'].head()
 | 3        | much like the regular bottling from       this...   |
 | 4         | blackberry and raspberry aromas show a typical...  |
 
+```markdown
+stopword_list = stopwords.words('english')
+ps = PorterStemmer()
+words_descriptions = words_descriptions.apply(lambda elem: [word for word in elem if not word in stopword_list])
+words_descriptions = words_descriptions.apply(lambda elem: [ps.stem(word) for word in elem])
+df['processed_description'] = words_descriptions.apply(lambda elem: ' '.join(elem))
+
+all_words = [word for tokens in words_descriptions for word in tokens]
+VOCAB = sorted(list(set(all_words)))
+```
 
 4. **Implementing "Bag of Words" Model:** Tokenized sentences to lists of words and created a vocabulary list of those words 
 
@@ -82,13 +92,23 @@ tokenizer = RegexpTokenizer(r'\w+')
 words_descriptions = df['description'].apply(tokenizer.tokenize)
 words_descriptions.head()
 ```
-| Variable      | Description   | 
+
 | ------------- | ------------- | 
 | 0       | [this, is, ripe, and, fruity, a, wine, that, i... |
 | 1   |[tart, and, snappy, the, flavors, of, lime, fl...  |
 | 2   |[pineapple, rind, lemon, pith, and, orange, bl...  |
 | 3        |  [much, like, the, regular, bottling, from, thi...  |
 | 4         | [blackberry, and, raspberry, aromas, show, a, ...  |
+
+```markdown
+all_words = [word for tokens in words_descriptions for word in tokens]
+df['description_lengths']= [len(tokens) for tokens in words_descriptions]
+VOCAB = sorted(list(set(all_words)))
+print("%s words total, with a vocabulary size of %s" % (len(all_words), len(VOCAB)))
+```
+
+
+
 
 5. **Splitting Data into Testing/Training Set (80/20 Split): 
 
