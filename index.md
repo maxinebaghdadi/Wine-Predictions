@@ -61,7 +61,7 @@ To get familiar with the data, we conducted some basic EDA.
 
 ***What is the country wise average wine price?***
 
-<img src="countryprice.png" alt="hi" class="inline"/>
+<img src="avg. country price.png" alt="hi" class="inline"/>
 
 ***What scores did the frequent varieties receive? 
 
