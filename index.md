@@ -36,7 +36,8 @@ BERT uses two training strategies:
 
 # Procedure  
 
-1. **Reading and Cleaning the Data:** We focused in on country, description, price, province, title, variety 
+1. **Reading and Cleaning the Data:** We focused in on country, description, price, province, title, variety. We dropped rows without the price and NaN entries. 
+2. **
 
 
 
