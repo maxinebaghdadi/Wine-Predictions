@@ -1,8 +1,10 @@
 ## Overview
 
-This project implements the Bidirectional Encoder Representations from Transformers (BERT) model on the following Wine Reviews dataset to create a recommendation system. This model takes a description and price range as input and recommends a specific wine output. 
+This project implements the Bidirectional Encoder Representations from Transformers (BERT) model on the following [Wine Reviews dataset](https://www.kaggle.com/zynicide/wine-reviews?select=winemag-data-130k-v2.csv) to create a recommendation system. This model takes a description and price range as input and recommends a specific wine as its output. 
 
-### Markdown
+[Link](url)
+
+### Wine Reviews Data Set 
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
