@@ -1,8 +1,6 @@
 ## Overview
 
-You can use the [editor on GitHub](https://github.com/maxinebaghdadi/winepredictions/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This project implements the Bidirectional Encoder Representations from Transformers (BERT) model on the following Wine Reviews dataset to create a recommendation system. This model takes a description and price range as input and recommends a specific wine output. 
 
 ### Markdown
 
