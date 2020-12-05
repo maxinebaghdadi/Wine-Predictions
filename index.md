@@ -139,3 +139,6 @@ We use GridSearchCV to find the optimal hyperparameters of this model to increas
 
 # Acknowledgements & References 
 This project would not have been possible without the support from [Professor Mike Izbicki](https://izbicki.me/). 
+
+
+<img src="countryprice.png" alt="hi" class="inline"/>
