@@ -62,10 +62,10 @@ Analyzed X, Y, Z * insert graphs here
 Standardized description variable through stemming, lemmatization, stopword removal, noise removal and lowercasing 
 
 ```markdown
-df = df[['country','description','price','province','title','variety']]
-df = df.dropna()
-df = df.drop_duplicates(['description, 'title']) 
-df.head()
+#LowerCasing
+df['description']= df['description'].str.lower()
+df['description']= df['description'].apply(lambda elem: re.sub('[^a-zA-Z]',' ', elem))  
+df['description']
 ```
 
 
