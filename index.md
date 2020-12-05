@@ -42,8 +42,8 @@ df = df[['country','description','price','province','title','variety']]
 df = df.dropna()
 df.head()
 ```
-| country               | description   | price   | province   | title   | variety   |    
-| ------------- | ------------- | 
+| country       | description   | price         | province      | title         | variety       |    
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | 
 | 0       | Country that the wine is from  |
 | 1       | Country that the wine is from  |
 | 2   | Distinctive elements of the taste of the wine  |
