@@ -8,6 +8,20 @@ This project implements the Bidirectional Encoder Representations from Transform
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
+
+### BERT Model 
+
+The BERT Model is a state-of-the-art natural language processor recently developed by researchers at [Google AI Language](https://arxiv.org/pdf/1810.04805.pdf). In contrast to past models that looked at a text sequence from left to right or combined left-to-right and right-to-left training, BERT implements bidirectional training of a Transformer and thus has a deeper flow and language context than single-direction models. 
+
+Fundamentally, this transformer includes two mechanism: 
+  1. Encoder that reads the text input 
+  2. Decoder that produces a prediction for task 
+
+This encoder reads the entire sequence of words at once and 
+
+
+
+
 ```markdown
 Syntax highlighted code block
 
