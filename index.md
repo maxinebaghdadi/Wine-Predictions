@@ -62,7 +62,7 @@ Analyzed X, Y, Z * insert graphs here
 Standardized description variable through stemming, lemmatization, stopword removal, noise removal and lowercasing 
 
 ```markdown
-*# LowerCasing * 
+*#LowerCasing* 
 df['description']= df['description'].str.lower()
 df['description']= df['description'].apply(lambda elem: re.sub('[^a-zA-Z]',' ', elem))  
 df['description']
