@@ -5,7 +5,13 @@ This project implements the Bidirectional Encoder Representations from Transform
 
 ### Wine Reviews Data Set 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This data was scraped from WineEnthusiast in 2017. 
+
+
+| Variable      | Data Type     | Sample       |
+| ------------- | ------------- | -------------
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
 
 ### BERT Model 
@@ -18,7 +24,7 @@ BERT uses two training strategies:
   
  We use BERT to extract descriptive terms from the Wine Reviews dataset to product prediction modelling. 
 
-# Process 
+# Procedure  
 
 ```markdown
 Syntax highlighted code block
