@@ -11,7 +11,7 @@ This data was scraped from WineEnthusiast in 2017 and it contains the following 
 | Variable      | Description   | 
 | ------------- | ------------- | 
 | country       | Country that the wine is from  |
-| description   | Content Cell  |
+| description   | Distinctive elements of the taste of the wine  |
 | designation   | Vineyard within winery where the graphes that made the wine are from  |
 | points        | Rating on a scale from 1-100   |
 | price         | Cost per bottle of wine  |
