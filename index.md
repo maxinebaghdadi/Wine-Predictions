@@ -1,6 +1,6 @@
 # Overview
 
-This project aims to create a predictive model that recommends wine based on its description and price. We use the following [Wine Reviews dataset](https://www.kaggle.com/zynicide/wine-reviews?select=winemag-data-130k-v2.csv) to implement two models. The first (MultinomialNB Regression) predicts the variety of wine based on its description. The second (Multinomial Logistic Regression) predicts a wine's country of origin based on its price and variety (also know as a type of wine like Malbec or Chianti). 
+This project aims to create a predictive model that recommends a wine based on its description and price. We use the following [Wine Reviews dataset](https://www.kaggle.com/zynicide/wine-reviews?select=winemag-data-130k-v2.csv) to implement two models. The first (MultinomialNB Regression) predicts the variety of wine based on its description. The second (Multinomial Logistic Regression) predicts a wine's country of origin based on its price and variety (also know as a type of wine like Malbec or Chianti). 
 
 ### Motivation
 
