@@ -85,7 +85,8 @@ To get familiar with the data, we conducted some basic EDA.
 <img src="descriptive terms.png" alt="hi" class="inline"/>
 
 ### Text Preprocessing: 
-Standardized description variable through stemming, lemmatization, stopword removal, noise removal and lowercasing 
+Standardized description variable through stemming, lemmatization, stopword removal, noise removal and lowercasing. 
+
 
 ```markdown
 df['description']= df['description'].str.lower()
