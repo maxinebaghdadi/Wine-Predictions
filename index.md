@@ -2,6 +2,11 @@
 
 This project implements the Bidirectional Encoder Representations from Transformers (BERT) model on the following [Wine Reviews dataset](https://www.kaggle.com/zynicide/wine-reviews?select=winemag-data-130k-v2.csv) to create a recommendation system. This model takes a description and price range as input and recommends a specific wine as its output. 
 
+### Background and Goal
+
+Consider a hypothetical situation: you are at Trader Joe's or Costco and you have a family gathering later today for the holidays. Being not the best cook, you decide that it is safe just to bring a bottle of wine (or two) to the party. You are overwhlemed withg the variety of choices and have a budge contraint. You know what kinds of fruity flavors that your grandpa likes, and your aunt mentioned something about liking "dry" wines. However, you are not that familar with specific charactersitcs of certian kinds of wines and their countires of origin. Like what is even the difference beween a Pinot Nior from France and a Cabernet Sauvignon from the Napa Valley of California?
+The goal of our project is to create a predictive model to recommend wine based on the description and price. 
+
 
 ### Wine Reviews Data Set 
 
