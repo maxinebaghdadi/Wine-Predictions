@@ -150,34 +150,20 @@ Our final goal is to output variety and country. However, those 2 outputs are in
 We use GridSearchCV to find the optimal hyperparameters of this model to increase its accuracy. 
 
 ### Model 1: Run MultinomialNB Regression
-(processed description → variety)
+(description → variety)
 
-The purpose of this model is to give you a variety of wine based on your flavor preferences.
+A MultinomialNB Regression is a classification method that derives the probability of a given feature vector with an associated label. This model assumes conditional independence for every feature. Here our input was the cleaned descriptions and the output was the variety. 
 
 ### Model 2: Run Multinomial Logistic Regression
 (variety, price → country)
 
-The purpose of this model is to give you a more precise recommendation since we also need to account for price. 
-We realize that the first model just gives you a variety, such as Pinot Noir or Malbec, but there are also drastic variety in prices. For example, a Swiss Pinot Noir on average is more expensive than Chile Pinot Noir. 
+A Logistic Regression model is a linear classification method that learns the probability of a sample belonging to a class to find the optimal decision boundary that seperates the classes. Here we take multiple inputs as variety and price as input and predict the country that is associated with those inputs. 
 
-### Model 3: Run Logistic Regression
-(price → country)
-
-This was a third model that we ran just to gather some more data for our experiment
 
 # Results 
 
-# Future Work
-There a few areas for improvement that we wanted to noted out. The first areas is to use either the BERT model or word2vec instead of Bag of Words. 
+# Conclusion
 
-The BERT Model is a state-of-the-art natural language processor recently developed by researchers at [Google AI Language](https://arxiv.org/pdf/1810.04805.pdf). Past models looked at a text sequence from left to right or combined left-to-right and right-to-left training, BERT, on the other hand, implements bidirectional training of a Transformer and thus has a deeper flow and language context than single-direction models. It is largely applied in classification tasks (including sentiment analyses), question answering tasks and named entity recognition (NER). Fundamentally this transformer includes two mechanisms: an encoder that reads the text input and a decoder that produces a prediction for task. 
-BERT uses two training strategies: 
-  1. Masked LM: 15% of the words in a sequence fed into BERT are replaced with a Mask token. The model predicts the original value of the masked words based on the context of the non-masked. Its loss function only considers the prediction of the masked values. 
-  2. Next Sentence Prediction: 50% of inputs are a pair in which the second sentence is a subsequent sentence in the original and the other 50% is where random sentences from the text are chosen as the second sentence. This trains the model to disconnect the random sentence from the first.  
-  
-Word2Vec is another technique for natural language processing. This algorithm uses a shallow two layer neural network model to learn word associations from a large structure of texts. The way that the algorithm works is that Word2vec represents each distinct word with a particular vector and produces a vector space that is typically several hundreds of dimensions. The way that the words are placed in the vector space are based on how sematantically related they are to each other. 
-
-The second area of improvement is to experiment with different classification models. Most of the algorithms that we tried are under the topic of Multi-Nomial Classification. Some popular algorithms that we tried are Naive Bayes and Logsitic Regression, but for the future, we want to see if we can try Decision Trees, k-Nearest Neighbors, and maybe even Random Forest. 
 
 # Acknowledgements & References 
 This project would not have been possible without the support from [Professor Mike Izbicki](https://izbicki.me/). 
