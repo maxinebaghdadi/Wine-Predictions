@@ -189,11 +189,10 @@ wine_test_III = clf2.predict(wine_test_III)
 print("$500 Cabernet Sauvignon is from", wine_test_III)
 ```
 
-| | 
-|-|
-|$5 Chardonnay is from  ['US'] |
-| $30 Pinot Noir is from  ['US'] |
-| $500 Cabernet Sauvignon is from ['France']| 
+$5 Chardonnay is from  ['US']
+$30 Pinot Noir is from  ['US']
+$500 Cabernet Sauvignon is from ['France']
+
 
 
 
