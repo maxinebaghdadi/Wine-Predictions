@@ -160,7 +160,7 @@ The purpose of this model is to give you a variety of wine based on your flavor 
 The purpose of this model is to give you a more precise recommendation since we also need to account for price. 
 We realize that the first model just gives you a variety, such as Pinot Noir or Malbec, but there are also drastic variety in prices. For example, a Swiss Pinot Noir on average is more expensive than Chile Pinot Noir. 
 
-### Model 2: Run Logistic Regression
+### Model 3: Run Logistic Regression
 (price → country)
 
 This was a third model that we ran just to gather some more data for our experiment
