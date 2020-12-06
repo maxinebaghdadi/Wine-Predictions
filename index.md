@@ -85,7 +85,7 @@ To get familiar with the data, we conducted some basic EDA.
 <img src="descriptive terms.png" alt="hi" class="inline"/>
 
 ### Text Preprocessing: 
-Standardized description variable through stemming, lemmatization, stopword removal, noise removal and lowercasing. 
+Standardized description variable through stemming, lemmatization, stopword removal, noise removal, lowercasing and TF-IDF. 
 
 
 ```markdown
@@ -138,6 +138,17 @@ df['description_lengths']= [len(tokens) for tokens in words_descriptions]
 VOCAB = sorted(list(set(all_words)))
 print("%s words total, with a vocabulary size of %s" % (len(all_words), len(VOCAB)))
 ```
+
+### Implementing Term Frequency times Inverse Document Frequency (TF-IDF):
+
+Reduced the weightage of more common words like (the, is, an etc.) which occurs in all document. 
+
+```markdown
+tfidf_transformer = TfidfTransformer()
+X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
+X_test_tfidf = tfidf_transformer.transform(X_test_counts)
+```
+
 
 ### Splitting Data into Testing/Training Set (80/20 Split): 
 
