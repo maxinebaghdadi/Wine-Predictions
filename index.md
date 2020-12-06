@@ -167,8 +167,7 @@ This was a third model that we ran just to gather some more data for our experim
 
 # Results 
 
-# Conclusion
-
+# Future Work
 There a few areas for improvement that we wanted to noted out. The first areas is to use either the BERT model or word2vec instead of Bag of Words. 
 
 The BERT Model is a state-of-the-art natural language processor recently developed by researchers at [Google AI Language](https://arxiv.org/pdf/1810.04805.pdf). Past models looked at a text sequence from left to right or combined left-to-right and right-to-left training, BERT, on the other hand, implements bidirectional training of a Transformer and thus has a deeper flow and language context than single-direction models. It is largely applied in classification tasks (including sentiment analyses), question answering tasks and named entity recognition (NER). Fundamentally this transformer includes two mechanisms: an encoder that reads the text input and a decoder that produces a prediction for task. 
