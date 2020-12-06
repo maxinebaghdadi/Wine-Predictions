@@ -45,7 +45,9 @@ BoW1 = {"Ninas":1, "favorite":1, "dessert":1, "is":1, "chocolate":2, "cake":1, "
 BoW2= {"Jenny":1, "prefers":1, "chips":1, "over":1, "chocolate":2, "cake":2, "She":1, "thinks":1, "that":1, "is":1, "too":1, "rich":1}
 ```
 
-In the case of our project specifically, we looked at the most commonly used words to describe wines and mapped them to what type of wines they are most matched to. For example, in the descriptions of Pinot Noirs versus Chardonnays, which type of wine has the most occurences of the word "dry" in their description. We must note that frequencies are not neccesarily the best representaion of the text. Especially while describing wine, we want to get rid of filler words such as ‘and’, ‘the’, and ‘a’. Instead we want to focus on the adjectives that are more significant to describing wine such as ‘crisp’, ‘vanilla’, and ‘bright’. 
+In the case of our project specifically, we looked at the most commonly used words to describe wines and mapped them to what type of wines they are most matched to. For example, in the descriptions of Pinot Noirs versus Chardonnays, we looked at which type of wine has the most occurences of the word "dry" in their description. 
+
+Something to note is that frequencies are not neccesarily the best representaion of the text. Especially while describing wine, we want to get rid of filler words such as ‘and’, ‘the’, and ‘a’. Instead we want to focus on the adjectives that are more significant to describing wine such as ‘crisp’, ‘vanilla’, and ‘bright’. 
 
 # Methodology  
 ### Reading and Cleaning the Data: 
