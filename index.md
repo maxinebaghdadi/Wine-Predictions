@@ -149,7 +149,7 @@ Our final goal is to output variety and country. However, those 2 outputs are in
 
 We use GridSearchCV to find the optimal hyperparameters of this model to increase its accuracy. 
 
-### Model 1: Run Gaussian Regression
+### Model 1: Run MultinomialNB Regression
 (processed description → variety)
 
 The purpose of this model is to give you a variety of wine based on your flavor preferences.
