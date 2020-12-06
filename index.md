@@ -94,6 +94,7 @@ df['description']= df['description'].str.lower()
 df['description']= df['description'].apply(lambda elem: re.sub('[^a-zA-Z]',' ', elem))  
 df['description'].head()
 ```
+
 | Variable      | Description   | 
 | ------------- | ------------- | 
 | 0             | this is ripe and fruity  a wine that is smooth...  |
