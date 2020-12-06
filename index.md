@@ -1,6 +1,6 @@
 # Overview
 
-This project uses the following [Wine Reviews dataset](https://www.kaggle.com/zynicide/wine-reviews?select=winemag-data-130k-v2.csv) to implement two models. The first predicts the variety of wine based on its description. The second predicts a wine's country of origin based on its price and variety. 
+This project uses the following [Wine Reviews dataset](https://www.kaggle.com/zynicide/wine-reviews?select=winemag-data-130k-v2.csv) to implement two models. The first (MultinomialNB Regression) predicts the variety of wine based on its description. The second (Multinomial Logistic Regression) predicts a wine's country of origin based on its price and variety. 
 
 ### Background and Goal
 
@@ -33,7 +33,7 @@ This data was scraped from WineEnthusiast in 2017 and it contains the following 
 
 ### Bag of Words Model 
 
-In order to process the description, we used the Bag of Words Model. The Bag of Words Model is a state-of-the-art natural language processor that represents a text (such as a sentence or a document) as a bag (multiset) of words. This model disregards grammar, the order of words, but keeps track of multiplicity (how often a word occurs in the text). In practice, Bag of Words is mainly used as a tool for feature generation. 
+In order to process the description, we used the Bag of Words Model that converts the text to numbers that are fed into our regression models. The Bag of Words Model is a state-of-the-art natural language processor that represents a text (such as a sentence or a document) as a bag (multiset) of words. This model disregards grammar, the order of words, but keeps track of multiplicity (how often a word occurs in the text). In practice, Bag of Words is mainly used as a tool for feature generation. 
 
 Below is an example of how Bag of Words works in a simple text document. The key of each mapping result is the word, and it is followed by the number of occurences of that word in the given string of text.
 
