@@ -6,10 +6,6 @@ This project uses the following [Wine Reviews dataset](https://www.kaggle.com/zy
 
 The holidays are coming up and you are at Trader Joe's or Costco and you have a small family gathering later today. Being not the best cook, you decide that it is safe just to bring a bottle of wine (or two) to the party. You are overwhelmed with the variety of choices and have a budge contraint. You know what kinds of fruity flavors that your grandpa likes, and your aunt mentioned something about liking "dry" wines. However, you are not that familar with specific charactersitcs of certian kinds of wines and their countires of origin. What is the difference beween a Pinot Noir from France and a Cabernet Sauvignon from the Napa Valley of California?
 
-
-Our project aims to create a predictive model to recommend wine based on the description and price. The ultimate goal of the project is to let a user have a good recommendation of a wine based on their taste preferences and budget. 
-
-
 ### Wine Reviews Data Set 
 
 This data was scraped from WineEnthusiast in 2017 and it contains the following variables: 
