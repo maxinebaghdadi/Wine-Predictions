@@ -152,6 +152,46 @@ We use GridSearchCV to find the optimal hyperparameters of this model to increas
 
 A MultinomialNB Regression is a classification method that derives the probability of a given feature vector with an associated label. This model assumes conditional independence for every feature. Here our input was the cleaned descriptions and the output was the variety. 
 
+```markdown
+wine_description_I = pd.DataFrame()
+wine_description_I['processed_description'] = ['light earthy red wine go well pasta']
+
+X = df['processed_description']
+Y1 = df['variety']
+
+X_train, X_test, y_train, y_test = train_test_split(X, Y1, test_size = 0.2, random_state = 42)
+
+train_df = pd.DataFrame(X_train)
+test_df = pd.DataFrame(X_test)
+
+from sklearn.feature_extraction.text import CountVectorizer
+count_vect = CountVectorizer()
+X_train_counts = count_vect.fit_transform(X_train)
+X_test_counts = count_vect.transform(X_test)
+wine_description_I_counts = count_vect.transform(wine_description_I)
+
+
+from sklearn.feature_extraction.text import TfidfTransformer
+tfidf_transformer = TfidfTransformer()
+X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
+X_test_tfidf = tfidf_transformer.transform(X_test_counts)
+wine_description_I_tfidf = tfidf_transformer.transform(wine_description_I_counts)
+
+from sklearn.naive_bayes import MultinomialNB
+clf = MultinomialNB().fit(X_train_tfidf, y_train)
+import numpy as np
+predicted = clf.predict(X_test_tfidf)
+accuracy = np.mean(predicted == y_test)
+print("Accuracy of NLP model: ", accuracy)
+
+pred_I = clf.predict(wine_description_I_tfidf)
+print("Light, earthy red wine that goes well with pasta", pred_I)
+```
+```markdown
+Light, earthy red wine that goes well with pasta ['Pinot Noir']
+```
+
+
 ### Model 2: Run Multinomial Logistic Regression
 (variety, price → country)
 
