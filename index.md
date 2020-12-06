@@ -60,8 +60,10 @@ df = df.dropna()
 df = df.drop_duplicates(['description, 'title']) 
 df.head()
 ```
+
+
 | country       | description                                        | price  | province      | title                                         | variety       |    
-| ------------- | -------------------------------------------------  | ------ | ------------- | -------------                                 |------------- | 
+| ------------- | -------------------------------------------------  | ------ | ------------- | --------------------------------------------- |------------- | 
 | Portugal      | This is ripe and fruity, a wine that is smooth...  | 15.0   | Douro         | Quinta dos Avidagos 2011 Avidagos Red (Douro) | Portuguese Red
 | US            | Tart and snappy, the flavors of lime flesh and...  | 14.0   | Oregon        | Rainstorm 2013 Pinot Gris (Willamette Valley)	| Pinot Gris
 | US            | Pineapple rind, lemon pith and orange blossom ...  | 13.0   | Michigan      | St. Julian 2013 Reserve Late Harvest Riesling | Riesling 
@@ -119,6 +121,8 @@ tokenizer = RegexpTokenizer(r'\w+')
 words_descriptions = df['description'].apply(tokenizer.tokenize)
 words_descriptions.head()
 ```
+
+
 | Variable      | Description   |
 | ------------- | ------------- | 
 | 0             | [this, is, ripe, and, fruity, a, wine, that, i... |
@@ -126,6 +130,7 @@ words_descriptions.head()
 | 2             |[pineapple, rind, lemon, pith, and, orange, bl...  |
 | 3             |  [much, like, the, regular, bottling, from, thi...  |
 | 4             | [blackberry, and, raspberry, aromas, show, a, ...  |
+
 
 ```markdown
 all_words = [word for tokens in words_descriptions for word in tokens]
