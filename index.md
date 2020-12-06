@@ -1,6 +1,6 @@
 # Overview
 
-This project implements the Bag of Words model on the following [Wine Reviews dataset](https://www.kaggle.com/zynicide/wine-reviews?select=winemag-data-130k-v2.csv) to create a recommendation system. 
+This project uses the following [Wine Reviews dataset](https://www.kaggle.com/zynicide/wine-reviews?select=winemag-data-130k-v2.csv) to implement two models. The first predicts the variety of wine based on its description. The second predicts a wine's country of origin based on its price and variety. 
 
 ### Background and Goal
 
@@ -33,7 +33,7 @@ This data was scraped from WineEnthusiast in 2017 and it contains the following 
 
 ### Bag of Words Model 
 
-The Bag of Words Model is a state-of-the-art natural language processor that represents a text (such as a sentence or a document) as a bag (multiset) of words. This model disregards grammar, the order of words, but keeps track of multiplicity (how often a word occurs in the text). In practice, Bag of Words is mainly used as a tool for feature generation. 
+In order to process the description, we used the Bag of Words Model. The Bag of Words Model is a state-of-the-art natural language processor that represents a text (such as a sentence or a document) as a bag (multiset) of words. This model disregards grammar, the order of words, but keeps track of multiplicity (how often a word occurs in the text). In practice, Bag of Words is mainly used as a tool for feature generation. 
 
 Below is an example of how Bag of Words works in a simple text document. The key of each mapping result is the word, and it is followed by the number of occurences of that word in the given string of text.
 
@@ -152,6 +152,17 @@ We use GridSearchCV to find the optimal hyperparameters of this model to increas
 
 A MultinomialNB Regression is a classification method that derives the probability of a given feature vector with an associated label. This model assumes conditional independence for every feature. Here our input was the cleaned descriptions and the output was the variety. 
 
+
+### Model 2: Run Multinomial Logistic Regression
+(variety, price → country)
+
+A Logistic Regression model is a linear classification method that learns the probability of a sample belonging to a class to find the optimal decision boundary that seperates the classes. Here we take multiple inputs as variety and price as input and predict the country that is associated with those inputs. 
+
+
+# Results 
+
+Once we completed the script for ***Model 1***, we conducted a few tests and this was the output: 
+
 ```markdown
 wine_description_I = pd.DataFrame()
 wine_description_I['processed_description'] = ['light earthy red wine go well pasta']
@@ -191,11 +202,7 @@ print("Light, earthy red wine that goes well with pasta", pred_I)
 Light, earthy red wine that goes well with pasta ['Pinot Noir']
 ```
 
-
-### Model 2: Run Multinomial Logistic Regression
-(variety, price → country)
-
-A Logistic Regression model is a linear classification method that learns the probability of a sample belonging to a class to find the optimal decision boundary that seperates the classes. Here we take multiple inputs as variety and price as input and predict the country that is associated with those inputs. 
+We completed the same for ***Model 2***: 
 
 ```markdown
 wine_test_I = pd.DataFrame()
@@ -234,21 +241,17 @@ $500 Cabernet Sauvignon is from ['France']
 ```
 
 
-# Results 
+# Summary & Next Steps
 
-# Next Steps
+This paper created two models. The first took used the Bag of Words model to predict the variety of wine based on its description. The second took price and variety to predict its country of origin. While there Bag of Words model ran successfully, there are different models we are seeking to implement in the future. 
 
-There a few areas for improvement that we wanted to noted out. The first areas is to use either the BERT model or word2vec instead of Bag of Words. 
-The BERT Model is a state-of-the-art natural language processor recently developed by researchers at [Google AI Language](https://arxiv.org/pdf/1810.04805.pdf). Past models looked at a text sequence from left to right or combined left-to-right and right-to-left training, BERT, on the other hand, implements bidirectional training of a Transformer and thus has a deeper flow and language context than single-direction models. It is largely applied in classification tasks (including sentiment analyses), question answering tasks and named entity recognition (NER). Fundamentally this transformer includes two mechanisms: an encoder that reads the text input and a decoder that produces a prediction for task. 
+The first is the BERT model. The BERT Model is a state-of-the-art natural language processor recently developed by researchers at [Google AI Language](https://arxiv.org/pdf/1810.04805.pdf). Past models looked at a text sequence from left to right or combined left-to-right and right-to-left training, BERT, on the other hand, implements bidirectional training of a Transformer and thus has a deeper flow and language context than single-direction models. It is largely applied in classification tasks (including sentiment analyses), question answering tasks and named entity recognition (NER). Fundamentally this transformer includes two mechanisms: an encoder that reads the text input and a decoder that produces a prediction for task. 
 
 BERT uses two training strategies: 
   1. Masked LM: 15% of the words in a sequence fed into BERT are replaced with a Mask token. The model predicts the original value of the masked words based on the context of the non-masked. Its loss function only considers the prediction of the masked values. 
   2. Next Sentence Prediction: 50% of inputs are a pair in which the second sentence is a subsequent sentence in the original and the other 50% is where random sentences from the text are chosen as the second sentence. This trains the model to disconnect the random sentence from the first.  
   
-Word2Vec is another technique for natural language processing. This algorithm uses a shallow two layer neural network model to learn word associations from a large structure of texts. The way that the algorithm works is that Word2vec represents each distinct word with a particular vector and produces a vector space that is typically several hundreds of dimensions. The way that the words are placed in the vector space are based on how sematantically related they are to each other. 
-
-The second area of improvement is to experiment with different classification models. Most of the algorithms that we tried are under the topic of Multi-Nomial Classification. Some popular algorithms that we tried are Naive Bayes and Logsitic Regression, but for the future, we want to see if we can try Decision Trees, k-Nearest Neighbors, and maybe even Random Forest.
-
+The second is the Word2Vec instead of Bag of Words. Word2Vec is another technique for natural language processing. This algorithm uses a shallow two layer neural network model to learn word associations from a large structure of texts. The way that the algorithm works is that Word2vec represents each distinct word with a particular vector and produces a vector space that is typically several hundreds of dimensions. The way that the words are placed in the vector space are based on how sematantically related they are to each other. 
 
 
 # Acknowledgements & References 
