@@ -43,7 +43,7 @@ BERT uses two training strategies:
 # Methodology  
 ### Reading and Cleaning the Data: 
 
-Filtered for country, description, price, province, title, variety; dropped rows without the price and NaN entries; removed datapoints with same title and description
+In order to clean up the data, we filtered for country, description, price, province, title, variety. We also dropped rows without the price and NaN entries and removed datapoints with same title and description
 
 ```markdown
 df = df[['country','description','price','province','title','variety']]
