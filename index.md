@@ -31,20 +31,26 @@ This data was scraped from WineEnthusiast in 2017 and it contains the following 
 | winery        | Winery of specificied wine | 
 
 
-### BERT Model 
+### Bag of Words Model 
 
-The BERT Model is a state-of-the-art natural language processor recently developed by researchers at [Google AI Language](https://arxiv.org/pdf/1810.04805.pdf). Past models looked at a text sequence from left to right or combined left-to-right and right-to-left training, BERT, on the other hand, implements bidirectional training of a Transformer and thus has a deeper flow and language context than single-direction models. It is largely applied in classification tasks (including sentiment analyses), question answering tasks and named entity recognition (NER). Fundamentally this transformer includes two mechanisms: an encoder that reads the text input and a decoder that produces a prediction for task. 
+The Bag of Words Model is a state-of-the-art natural language processor that represents a text (such as a sentence or a document) as a bag (multiset) of wrods. This model disregards grammar, the order of words, but keep track of multiplicity, which is how often a word occurs in the text. In practice, Bag of Words is mainly used as a tool for feature generation. 
 
-BERT uses two training strategies: 
-  1. Masked LM: 15% of the words in a sequence fed into BERT are replaced with a Mask token. The model predicts the original value of the masked words based on the context of the non-masked. Its loss function only considers the prediction of the masked values. 
-  2. Next Sentence Prediction: 50% of inputs are a pair in which the second sentence is a subsequent sentence in the original and the other 50% is where random sentences from the text are chosen as the second sentence. This trains the model to disconnect the random sentence from the first.  
-  
- We use BERT to extract descriptive terms from the Wine Reviews dataset to product prediction modelling. 
+Below is an example of how Bag of Words works in a simple text document. The key of each mapping result is the word, and it is followed by the number of occurences of that word in the given string of text.
+
+1. Nina's favorite dessert is chocolate cake. She likes plain dark chocolate as well.
+2. Jenny prefers chips over chocolate cake. She thinks that chocolate cake is too rich.
+
+```markdown
+BoW1 = {"Ninas":1, "favorite":1, "dessert":1, "is":1, "chocolate":2, "cake":1, "She":1, "likes":1, "plain":1, "dark":1, "well":1}
+BoW2= {"Jenny":1, "prefers":1, "chips":1, "over":1, "chocolate":2, "cake":2, "She":1, "thinks":1, "that":1, "is":1, "too":1, "rich":1}
+```
+
+In the case of our project specifically, we looked at the most commonly used words to describe wines and mapped them to what type of wines they are most matched to. For example, in the descriptions of Pinot Noirs versus Chardonnays, which type of wine has the most occurences of the word "dry" in their description. We must note that frequencies are not neccesarily the best representaion of the text. Especially while describing wine, we want to get rid of filler words such as ‘and’, ‘the’, and ‘a’. Instead we want to focus on the adjectives that are more significant to describing wine such as ‘crisp’, ‘vanilla’, and ‘bright’. 
 
 # Methodology  
 ### Reading and Cleaning the Data: 
 
-In order to clean up the data, we filtered for country, description, price, province, title, variety. We also dropped rows without the price and NaN entries and removed datapoints with same title and description
+In order to clean up the data, we filtered for country, description, price, province, title, variety. We also dropped rows without the price and NaN entries and removed datapoints with same title and description.
 
 ```markdown
 df = df[['country','description','price','province','title','variety']]
