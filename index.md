@@ -143,11 +143,18 @@ Our final goal is to output variety and country. However, those 2 outputs are in
 
 We use GridSearchCV to find the optimal hyperparameters of this model to increase its accuracy. 
 
-### Model 1: Run Logistic Regression
+### Model 1: Run Gaussian Regression
 (processed description → variety)
+The purpose of this model is to give you a variety of wine based on your flavor preferences.
 
 ### Model 2: Run Multinomial Logistic Regression
-(processed description → variety)
+(variety, price → country)
+The purpose of this model is to give you a more precise recommendation since we also need to account for price. 
+We realize that the first model just gives you a variety, such as Pinot Noir or Malbec, but there are also drastic variety in prices. For example, a Swiss Pinot Noir on average is more expensive than Chile Pinot Noir. 
+
+### Model 2: Run Logistic Regression
+(price → country)
+This was a third model that we ran just to gather some more data for our experiment
 
 # Results 
 
