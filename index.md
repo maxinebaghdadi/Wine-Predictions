@@ -33,7 +33,7 @@ This data was scraped from WineEnthusiast in 2017 and it contains the following 
 
 ### Bag of Words Model 
 
-The Bag of Words Model is a state-of-the-art natural language processor that represents a text (such as a sentence or a document) as a bag (multiset) of wrods. This model disregards grammar, the order of words, but keep track of multiplicity, which is how often a word occurs in the text. In practice, Bag of Words is mainly used as a tool for feature generation. 
+The Bag of Words Model is a state-of-the-art natural language processor that represents a text (such as a sentence or a document) as a bag (multiset) of words. This model disregards grammar, the order of words, but keeps track of multiplicity (how often a word occurs in the text). In practice, Bag of Words is mainly used as a tool for feature generation. 
 
 Below is an example of how Bag of Words works in a simple text document. The key of each mapping result is the word, and it is followed by the number of occurences of that word in the given string of text.
 
@@ -45,9 +45,9 @@ BoW1 = {"Ninas":1, "favorite":1, "dessert":1, "is":1, "chocolate":2, "cake":1, "
 BoW2= {"Jenny":1, "prefers":1, "chips":1, "over":1, "chocolate":2, "cake":2, "She":1, "thinks":1, "that":1, "is":1, "too":1, "rich":1}
 ```
 
-In the case of our project specifically, we looked at the most commonly used words to describe wines and mapped them to what type of wines they are most matched to. For example, in the descriptions of Pinot Noirs versus Chardonnays, we looked at which type of wine has the most occurences of the word "dry" in their description. 
+For this project specifically, we looked at the most commonly used words to describe wines and mapped them to what type of wines they are  matched to. For example, in the descriptions of Pinot Noirs versus Chardonnays, we looked at which type of wine has the most occurences of the word "dry" in their description. 
 
-Something to note is that frequencies are not neccesarily the best representaion of the text. Especially while describing wine, we want to get rid of filler words such as ‘and’, ‘the’, and ‘a’. Instead we want to focus on the adjectives that are more significant to describing wine such as ‘crisp’, ‘vanilla’, and ‘bright’. 
+Something to note is that frequencies are not neccesarily the best representations of the text. Especially while describing wine, we want to get rid of filler words such as ‘and’, ‘the’, and ‘a’. Instead, we want to focus on the adjectives that are more significant to describing wine such as ‘crisp’, ‘vanilla’, and ‘bright’. This is something we accounted for in our methodology. 
 
 # Methodology  
 ### Reading and Cleaning the Data: 
