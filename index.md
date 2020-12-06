@@ -1,10 +1,10 @@
 # Overview
 
-This project uses the following [Wine Reviews dataset](https://www.kaggle.com/zynicide/wine-reviews?select=winemag-data-130k-v2.csv) to implement two models. The first (MultinomialNB Regression) predicts the variety of wine based on its description. The second (Multinomial Logistic Regression) predicts a wine's country of origin based on its price and variety. 
+This project aims to create a predictive model that recommends wine based on its description and price. We use the following [Wine Reviews dataset](https://www.kaggle.com/zynicide/wine-reviews?select=winemag-data-130k-v2.csv) to implement two models. The first (MultinomialNB Regression) predicts the variety of wine based on its description. The second (Multinomial Logistic Regression) predicts a wine's country of origin based on its price and variety (also know as a type of wine like Malbec or Chianti). 
 
-### Background and Goal
+### Motivation
 
-The holidays are coming up and you are at Trader Joe's or Costco and you have a small family gathering later today. Being not the best cook, you decide that it is safe just to bring a bottle of wine (or two) to the party. You are overwhelmed with the variety of choices and have a budge contraint. You know what kinds of fruity flavors that your grandpa likes, and your aunt mentioned something about liking "dry" wines. However, you are not that familar with specific charactersitcs of certian kinds of wines and their countires of origin. What is the difference beween a Pinot Noir from France and a Cabernet Sauvignon from the Napa Valley of California?
+The holidays are coming up and you are at Trader Joe's or Costco and you have a small family gathering later today. Being not the best cook, you decide that it is safe just to bring a bottle of wine (or two) to the party. You are overwhelmed with the variety of choices and have a budget constraint. You know what kinds of fruity flavors that your grandpa likes, and your aunt mentioned something about liking "dry" wines. However, you are not that familar with specific charactersitcs of certian kinds of wines and their countires of origin, such as the difference beween a Pinot Noir from France and a Cabernet Sauvignon from the Napa Valley of California. The goal of this model is to help you make the best choice based on your knowledge and preferences.
 
 ### Wine Reviews Data Set 
 
@@ -137,7 +137,7 @@ print("%s words total, with a vocabulary size of %s" % (len(all_words), len(VOCA
 
 ### Implementing Term Frequency times Inverse Document Frequency (TF-IDF):
 
-Reduced the weightage of more common words like (the, is, an etc.) which occurs in all document. 
+Reduced the weightage of more common words like (the, is, an etc.) which occurs in all documents. 
 
 ```markdown
 tfidf_transformer = TfidfTransformer()
@@ -148,23 +148,23 @@ X_test_tfidf = tfidf_transformer.transform(X_test_counts)
 
 ### Splitting Data into Testing/Training Set (80/20 Split): 
 
-Our final goal is to output variety and country. However, those 2 outputs are in 2 different columns in the dataframe. Therefore we are running to regressions:
+Our final goal is to output wine's variety and country. However, those 2 outputs are in 2 different columns in the dataframe. Therefore, we are running to regressions:
 
-1. Logistic Regression (Processed Description --> Variety) 
+1. Multinomial NB Regression (Processed Description --> Variety) 
 2. Multinomial Logistic Regression (Variety, Price --> Country)
 
 We use GridSearchCV to find the optimal hyperparameters of this model to increase its accuracy. 
 
 ### Model 1: Run MultinomialNB Regression
-(description → variety)
+(Processed Description --> Variety)
 
 A MultinomialNB Regression is a classification method that derives the probability of a given feature vector with an associated label. This model assumes conditional independence for every feature. Here our input was the cleaned descriptions and the output was the variety. 
 
 
 ### Model 2: Run Multinomial Logistic Regression
-(variety, price → country)
+(Variety, Price --> Country)
 
-A Logistic Regression model is a linear classification method that learns the probability of a sample belonging to a class to find the optimal decision boundary that seperates the classes. Here we take multiple inputs as variety and price as input and predict the country that is associated with those inputs. 
+A Multinomial Logistic Regression model is a linear classification method that learns the probability of a sample belonging to a class to find the optimal decision boundary that separates the classes. Here we take multiple inputs as a variety and price as input and predict the country that is associated with those inputs. 
 
 
 # Results 
@@ -253,13 +253,13 @@ $500 Cabernet Sauvignon is from ['France']
 
 This paper created two models. The first took used the Bag of Words model to predict the variety of wine based on its description. The second took price and variety to predict its country of origin. While there Bag of Words model ran successfully, there are different models we are seeking to implement in the future. 
 
-The first is the BERT model. The BERT Model is a state-of-the-art natural language processor recently developed by researchers at [Google AI Language](https://arxiv.org/pdf/1810.04805.pdf). Past models looked at a text sequence from left to right or combined left-to-right and right-to-left training, BERT, on the other hand, implements bidirectional training of a Transformer and thus has a deeper flow and language context than single-direction models. It is largely applied in classification tasks (including sentiment analyses), question answering tasks and named entity recognition (NER). Fundamentally this transformer includes two mechanisms: an encoder that reads the text input and a decoder that produces a prediction for task. 
+The first is the BERT model. The BERT Model is a state-of-the-art natural language processor recently developed by researchers at [Google AI Language](https://arxiv.org/pdf/1810.04805.pdf). Past models looked at a text sequence from left to right or combined left-to-right and right-to-left training, BERT, on the other hand, implements bidirectional training of a Transformer and thus has a deeper flow and language context than single-direction models. It is largely applied in classification tasks (including sentiment analyses), question answering tasks and named entity recognition (NER). Fundamentally, this transformer includes two mechanisms: an encoder that reads the text input and a decoder that produces a prediction for task. 
 
 BERT uses two training strategies: 
   1. Masked LM: 15% of the words in a sequence fed into BERT are replaced with a Mask token. The model predicts the original value of the masked words based on the context of the non-masked. Its loss function only considers the prediction of the masked values. 
   2. Next Sentence Prediction: 50% of inputs are a pair in which the second sentence is a subsequent sentence in the original and the other 50% is where random sentences from the text are chosen as the second sentence. This trains the model to disconnect the random sentence from the first.  
   
-The second is the Word2Vec instead of Bag of Words. Word2Vec is another technique for natural language processing. This algorithm uses a shallow two layer neural network model to learn word associations from a large structure of texts. The way that the algorithm works is that Word2vec represents each distinct word with a particular vector and produces a vector space that is typically several hundreds of dimensions. The way that the words are placed in the vector space are based on how sematantically related they are to each other. 
+The second is the Word2Vec instead of Bag of Words. Word2Vec is another technique for natural language processing. This algorithm uses a shallow two layer neural network model to learn word associations from a large structure of texts. The way that the algorithm works is that Word2Vec represents each distinct word with a particular vector and produces a vector space that is typically several hundreds of dimensions. The way that the words are placed in the vector space are based on how sematantically related they are to each other. 
 
 
 # Acknowledgements & References 
