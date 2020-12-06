@@ -159,6 +159,43 @@ A MultinomialNB Regression is a classification method that derives the probabili
 
 A Logistic Regression model is a linear classification method that learns the probability of a sample belonging to a class to find the optimal decision boundary that seperates the classes. Here we take multiple inputs as variety and price as input and predict the country that is associated with those inputs. 
 
+```markdown
+wine_test_I = pd.DataFrame()
+wine_test_II = pd.DataFrame()
+wine_test_III = pd.DataFrame()
+
+wine_test_I['price'] = [10]
+wine_test_I['variety'] = ['Chardonnay']
+wine_test_II['price'] = [50]
+wine_test_II['variety'] = ['Pinot Noir']
+wine_test_III['price'] = [500]
+wine_test_III['variety'] = ['Cabernet Sauvignon']
+
+def convert(data):
+    number = preprocessing.LabelEncoder()
+    data['variety'] = number.fit_transform(data['variety'])
+    data['variety']=data['variety'].fillna(-999)
+    return data
+
+wine_test_I=convert(wine_test_I)
+wine_test_II=convert(wine_test_II)
+wine_test_III=convert(wine_test_III)
+
+wine_test_I = clf2.predict(wine_test_I)
+print("$5 Chardonnay is from ", wine_test_I)
+wine_test_II = clf2.predict(wine_test_II)
+print("$30 Pinot Noir is from ", wine_test_II)
+wine_test_III = clf2.predict(wine_test_III)
+print("$500 Cabernet Sauvignon is from", wine_test_III)
+```
+
+| | | |
+|-|-|-|
+|$5 Chardonnay is from  ['US'] |
+| $30 Pinot Noir is from  ['US'] |
+| $500 Cabernet Sauvignon is from ['France']| 
+
+
 
 # Results 
 
